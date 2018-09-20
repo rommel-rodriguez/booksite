@@ -1,0 +1,13 @@
+/* The effects of  This stylesheet are not applied to the
+	document kashim01.phtml for some unknown reason
+*/
+html, body{
+	font-size: 16px;
+}
+
+#book-image{
+	padding: 10px;
+	height: 300px;
+}
+
+.twitter-typeahead, .tt-hint, .tt-input, .tt-menu { width: 100%; }
