@@ -1,6 +1,6 @@
 <?php 
 require_once  "MDBConnection.php";
-require_once  "DAOInterface.php";
+require_once  "CRUDInterface.php";
 require_once  $_SERVER['DOCUMENT_ROOT'] . "/model/Category.php";
 require_once  $_SERVER['DOCUMENT_ROOT'] . "/model/book.php";
 

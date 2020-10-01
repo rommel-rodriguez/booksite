@@ -1,7 +1,7 @@
 <?php 
 	require_once  "MDBConnection.php";
-	require_once  "../model/user.php";
-	require_once  "DAOInterface.php";
+	require_once  "../Model/User.php";
+	require_once  "CRUDInterface.php";
 	class UserDAO implements CRUDInterface{
 		public function __construct(){
 			/**
@@ -46,7 +46,7 @@ _EOF_;
 			/**
 			 * This function returns an array "rows" 
 			 in which each row is a map column: value of 
-			 each row of the table user
+			 each row of the table User
 			 */
 			 return $this->con->query('select * from test_user');
 
@@ -84,7 +84,7 @@ _SQL_;
 		}
 		public function delete($userId):int{
 			/**
-			 * Deletes rows of the table user
+			 * Deletes rows of the table User
 			 * Returns: The number of rows deteled
 			 * or zero if no row where delete 
 			 * -1 if there was some error

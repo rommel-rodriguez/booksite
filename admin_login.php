@@ -1,10 +1,10 @@
 <?php 
-	require_once("controller/security_suit.php");
+	require_once("Controller/security_suit.php");
  ?>
  <?php if(! $_POST): ?>
  <?php
 	require_once 'header.html';
-	require_once 'controller/security_suit.php';
+	require_once 'Controller/security_suit.php';
  ?>
  <form action="" method="POST" role="form">
  	<legend>Admin Control</legend>
@@ -30,6 +30,7 @@
 <?php require_once 'footer.html'; ?>
  <?php else: 
 		$_POST = sanitizePost($_POST);
+		### TODO: Change this, store password as hash ONLY and include CSRF token for protection of sessions.
 		$json_string = file_get_contents('../booksite_admin.json');
 		$admin_credentials = json_decode($json_string, $assoc=TRUE);
 		if ( trim($_POST['admin']) == $admin_credentials['admin'] && 

@@ -1,5 +1,5 @@
 <?php 
-	require_once '../model/user.php';
+	require_once '../Model/User.php';
 	require_once 'security_suit.php';
 	require_once 'UserDAO.php';
 	/*$conne = MDBConnection::getConnection();
@@ -16,7 +16,7 @@
 	// deprecated->NEED TO ADD SALTING IN THE PASSWORD_HASH FUNCTION
 	// NEEDEDD JUST FOUND OUT THE BCRYPT uses its own salt
 	// Read more about this matter online 
-/*	$user = new User(
+/*	$User = new User(
 			$_POST['firstName'],
 			$_POST['lastName'],
 			$_POST['email'],

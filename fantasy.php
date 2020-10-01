@@ -1,8 +1,8 @@
 <?php 
 	$title = "Fantasy";
 	include 'header.html';
-	require_once 'controller/BookDAO.php';
-	require_once 'model/book.php';
+	require_once 'Controller/BookDAO.php';
+	require_once 'Model/Book.php';
 	$bookDAO = new BookDAO();
 	$categoryBooks = [];
 
@@ -35,7 +35,7 @@
 		if(!empty($bookReview)){
 			$book->setReview($bookReview);
 		}else{
-			$book->setReview("There isn't a review for this book yet.");
+			$book->setReview("There isn't a review for this Book yet.");
 		}
 		$book->setCategories($bookDAO->getBookCategories($book->getIsbn()));
 	}

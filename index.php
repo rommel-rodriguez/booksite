@@ -5,11 +5,11 @@
 	include 'header.html';
 	#echo "Testing Before";
 	#echo $_SERVER['DOCUMENT_ROOT'];
-	require_once 'controller/BookDAO.php';
+	require_once 'Controller/BookDAO.php';
 	#include( 'https://raspiest-stitch.000webhostapp.com'  .  "/controller/BookDAO.php" ); ### lets try to avoid this solution.
 	#echo "Testing After";
 	#include('controller/BookDAO.php');
-	require_once 'model/book.php';
+	require_once 'Model/Book.php';
 	$bookDAO = new BookDAO();
 	$categoryBooks = [];
 
@@ -43,7 +43,7 @@
 		if(!empty($bookReview)){
 			$book->setReview($bookReview);
 		}else{
-			$book->setReview("There isn't a review for this book yet.");
+			$book->setReview("There isn't a review for this Book yet.");
 		}
 		$book->setCategories($bookDAO->getBookCategories($book->getIsbn()));
 	}

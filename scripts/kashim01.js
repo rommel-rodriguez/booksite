@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
 	addSubmitListener();
+	addCategorySubmitListener();
 	addUpdateSubmitListener();
 	addDeleteButtonListener();
 	checkCookie();
@@ -52,7 +53,7 @@ function addSubmitListener(){
 				alert("Book: "+formData.title+" added successsfully.");
 			}
 		});
-		event.preventDefault();
+		event.preventDefault(); /*Stops default behavior of submitssion*/
 
 	});
 }
@@ -94,12 +95,33 @@ function addUpdateSubmitListener(){
 	});
 }
 
+function addCategorySubmitListener(){
+	// Nothe that if some error happens here the default submit button's 
+	// functionality is used.
+	var submitInput = document.querySelector('#add-category button[type="submit"]');	
+	submitInput.addEventListener('click', function (event){
+		var formData = {
+			new_category:  document.querySelector('#new_category').value
+		};
+		jqXHRObject = $.post('/controller/add_category.php', formData, function (data, status){
+			console.log("Debugging Hacked Submit Method: ",data);
+			if(data.trim() != "successful_addition"){
+				alert("Some Error Has Happened, could NOT add the category. Most likely it alredy exists!");
+			}else{
+				alert("Category: "+formData.new_category +" added successsfully.");
+			}
+		});
+		event.preventDefault();
+
+	});
+}
+
 /**
  *  Sends the necessary information to delete_book.php
  *  so we can uniquely indentify and delete a book from the database.
  */
 function addDeleteButtonListener(){
-	// Nothe that if some error happens here the default submit button's 
+	// Note that if some error happens here the default submit button's 
 	// functionality is used.
 	var deleteButton = document.querySelector('#delete-button');	
 	deleteButton.addEventListener('click', function (event){

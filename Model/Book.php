@@ -1,5 +1,5 @@
 <?php 
-
+namespace Model;
 class Book{
 	private $isbn;
 	private $title;

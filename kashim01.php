@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	/*TODO: This authentication might be flawed*/
 	if( !isset($_SESSION['admin'])  ){
 			echo $_SESSION['admin'] ;
 			header('HTTP/1.1 302 Redirect');
@@ -67,7 +68,7 @@
 	<?php 
 		// Add logic here to redirect to error html if the user does no have the right credentials
 
-		require_once("controller/CategoryDAO.php");
+		require_once("Controller/CategoryDAO.php");
 		$catDAO = new CategoryDAO();
 		$categories = $catDAO->read();
 		//var_dump($categories);
@@ -248,7 +249,17 @@
 			</div>
 
 			<div class="tab-pane" id="add-category">
+				<form action="controller/add_category.php" method="POST" role="form" class="col-md-3">
+					<legend>New Category</legend>
 				
+					<div class="form-group">
+						<label for="new_category">Category</label>
+						<input type="text" class="form-control" id="new_category" name="new_category" placeholder="New Category">
+					</div>
+				
+					
+					<button type="submit" class="btn btn-primary">Add Category</button>
+				</form>	
 			</div>
 			
 		</div>

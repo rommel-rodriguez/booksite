@@ -1,5 +1,6 @@
 <?php 
 	//include($_SERVER["DOCUMENT_ROOT"] . '/nuggets.php');
+namespace Controller;
 	class MDBConnection{
 		public function __construct(){
 			die("Init function is not allowed")	;
@@ -11,7 +12,7 @@
 			$cred_map = json_decode($cred_file, true);
 			//$cred_map = $nuggets;
 			try{
-				$db = new PDO(
+				$db = new \PDO(
 					'mysql:host=127.0.0.1; dbname=book_project',
 					$cred_map['user'],
 					$cred_map['password']
@@ -21,7 +22,7 @@
 					error_log(date(DATE_RSS) ."Could not connect to the database \n$error\n");
 				}
 
-				$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+				$db->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
 				// FOR this to work i must grant apache2 permission to write to this folder or 
 				// write to its own folder logs, which i dont know how to do
 				// error_log(date(DATE_RSS) . "Connection Success\n"); // ONLY USE THIS FOR DEBUGGING

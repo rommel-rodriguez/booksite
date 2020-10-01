@@ -1,6 +1,6 @@
-<?php 
+<?php
 require_once  "MDBConnection.php";
-require_once  "DAOInterface.php";
+require_once  "CRUDInterface.php";
 require_once  $_SERVER['DOCUMENT_ROOT'] . "/model/Category.php";
 
 class CategoryDAO implements CRUDInterface{
@@ -16,18 +16,35 @@ class CategoryDAO implements CRUDInterface{
 		}
 
 		public function create($catObj):bool{
+
 			$exitStatus = false;
+			$params = [
+				':catName' => $catObj->getName()
+			];
 			$insertSQL =<<<_SQL_
 			insert into category(cat_name) 
 				values(:catName);
 _SQL_;
-
+			$checkSQL =<<<_SQL_
+			select count(*) as cat_count from category 
+				where cat_name = :catName;
+_SQL_;
+			# First Lets check if the category is already in the database.
+			$preparedStatement = $this->con->prepare($checkSQL);
+			$obj_result = $preparedStatement->execute($params);
+			$check_result = $preparedStatement->fetch();
+			if($check_result['cat_count'] != 0 ){
+				error_log("Category Already exists in the database");
+				return false;	
+			}
 			$preparedStatement = $this->con->prepare($insertSQL);
-			$params = [
-				':catName' => $catObj->getName()
-			];
-			if($preparedStatement->execute($params)){
+			$return_value = $preparedStatement->execute($params);
+			if( $this->con->errorInfo()[0] === '00000'){
 				$exitStatus = true;
+			}else{
+				//echo pdoErrorString($this->con);
+				echo "\nINSIDE CATDAO->CREATE function!!!!!!\n"; // ERROR HERE.
+				print_r($this->con->errorInfo()); // ERROR HERE.
 			}
 			return $exitStatus;
 		}
