@@ -1,6 +1,6 @@
 <?php 
-require_once("MDBConnection.php") ;
-require_once('security_suit.php'); // Careful Here
+require_once("../../Controller/MDBConnection.php") ;
+require_once('../../Controller/security_suit.php'); // Careful Here
 require_once($_SERVER['DOCUMENT_ROOT'] . '/model/book.php'); // Careful Here
 require_once($_SERVER['DOCUMENT_ROOT'] . '/model/Author.php'); // Careful Here
 require_once($_SERVER['DOCUMENT_ROOT'] . '/controller/BookDAO.php'); // Careful Here

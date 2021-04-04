@@ -1,0 +1,7 @@
+default_route:
+    path:     /
+    defaults: { controller: 'Home::index' }
+home_route:
+    path:     /home
+    defaults: { controller: 'Home::index' }
+ 

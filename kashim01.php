@@ -68,7 +68,7 @@
 	<?php 
 		// Add logic here to redirect to error html if the user does no have the right credentials
 
-		require_once("Controller/CategoryDAO.php");
+		require_once("App/Model/CategoryDAO.php");
 		$catDAO = new CategoryDAO();
 		$categories = $catDAO->read();
 		//var_dump($categories);

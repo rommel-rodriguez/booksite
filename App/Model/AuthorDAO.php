@@ -1,6 +1,6 @@
 <?php 
-require_once  "MDBConnection.php";
-require_once  "CRUDInterface.php";
+require_once  "../../Controller/MDBConnection.php";
+require_once  "../../Controller/CRUDInterface.php";
 require_once  $_SERVER['DOCUMENT_ROOT'] . "/model/Author.php";
 class AuthorDAO implements CRUDInterface{
 		public function __construct(){

@@ -1,0 +1,27 @@
+{
+	"require" : {
+		"psr/log" : "^1.0",
+		"symfony/polyfill-mbstring" : "^1.5",
+		"twig/twig" : "^3.0",
+		"symfony/routing": "^5.2",
+		"symfony/http-foundation": "^5.2",
+		"symfony/yaml": "^5.2",
+		"symfony/config": "^5.2",
+		"doctrine/annotations": "^1.12",
+		"doctrine/cache": "^1.10",
+		"symfony/framework-bundle": "^5.2"
+	},
+	"suggest" : {
+		"psr/log" : "placehoder",
+		"league/oauth2-google" : "placehoder",
+		"hayageek/oauth2-yahoo" : "placehoder",
+		"stevenmaguire/oauth2-microsoft" : "placehoder",
+		"ext-mbstring" : "placehoder",
+		"symfony/polyfill-mbstring" : "placehoder"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Malaz\\Booksite\\" : "App/"
+		}
+	}
+}

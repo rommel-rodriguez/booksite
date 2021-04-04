@@ -1,8 +1,15 @@
 <?php 
-	$title = "Fantasy";
+	#$title = "Fantasy";
+	$title = $_GET['title'] ?? "Fantasy";
+	#echo "Testing: ". $_SERVER['DOCUMENT_ROOT'] ;
 	include 'header.html';
-	require_once 'Controller/BookDAO.php';
-	require_once 'Model/Book.php';
+	#echo "Testing Before";
+	#echo $_SERVER['DOCUMENT_ROOT'];
+	require_once 'App/Model/BookDAO.php';
+	#include( 'https://raspiest-stitch.000webhostapp.com'  .  "/controller/BookDAO.php" ); ### lets try to avoid this solution.
+	#echo "Testing After";
+	#include('controller/BookDAO.php');
+	require_once 'App/Model/Book.php';
 	$bookDAO = new BookDAO();
 	$categoryBooks = [];
 
@@ -10,7 +17,8 @@
 
 		// some Validity Code Here
 		// purposely not sanitized POST
-	$categoryBooks = $bookDAO->findBooksInCategory('fantasy');
+	#$categoryBooks = $bookDAO->findBooksInCategory('fantasy');
+	$categoryBooks = $bookDAO->findBooksInCategory("$title");
 
 	$bookList = [];
 	foreach($categoryBooks as $book){
@@ -40,7 +48,7 @@
 		$book->setCategories($bookDAO->getBookCategories($book->getIsbn()));
 	}
 
- ?>	
+?>	
 	<div class="row">
 		<?php foreach ($bookList as $book):  ?>
 			<div class="container-fluid">

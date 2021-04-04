@@ -1,7 +1,7 @@
 <?php 
-	require_once  "MDBConnection.php";
-	require_once  "../Model/User.php";
-	require_once  "CRUDInterface.php";
+	require_once  "../../Controller/MDBConnection.php";
+	require_once  "User.php";
+	require_once  "../../Controller/CRUDInterface.php";
 	class UserDAO implements CRUDInterface{
 		public function __construct(){
 			/**

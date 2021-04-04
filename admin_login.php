@@ -1,10 +1,10 @@
 <?php 
-	require_once("Controller/security_suit.php");
+	require_once("App/Controller/security_suit.php");
  ?>
  <?php if(! $_POST): ?>
  <?php
 	require_once 'header.html';
-	require_once 'Controller/security_suit.php';
+	require_once 'App/Controller/security_suit.php';
  ?>
  <form action="" method="POST" role="form">
  	<legend>Admin Control</legend>

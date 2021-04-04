@@ -1,7 +1,7 @@
 <?php 
 	require_once '../Model/User.php';
-	require_once 'security_suit.php';
-	require_once 'UserDAO.php';
+	require_once '../../Controller/security_suit.php';
+	require_once '../../Controller/UserDAO.php';
 	/*$conne = MDBConnection::getConnection();
 
 	$rows = $conne->query('select * from test_user');

@@ -1,8 +1,8 @@
 <?php
-namespace Controller;
+namespace Model;
 use \Model\Book;
-require_once  "MDBConnection.php";
-require_once  "CRUDInterface.php";
+require_once  "../../Controller/MDBConnection.php";
+require_once  "../../Controller/CRUDInterface.php";
 # require_once  $_SERVER['DOCUMENT_ROOT'] . "/Model/Book.php"; # Replace   part with nothing.
 
 class BookDAO implements CRUDInterface{
