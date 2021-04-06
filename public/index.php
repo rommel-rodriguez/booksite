@@ -1,5 +1,6 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+## TODO: Move Router to its own file
 
 ### Testing Autoloading
 #echo "Testing Autoloading: {$_SERVER['DOCUMENT_ROOT']}";
@@ -79,7 +80,6 @@ try
     $controllerAction =$parameters['_controller'];
     $controllerAction();
     ### End Of Load controller for Annotation Loader
-    
 }
 catch (ResourceNotFoundException $e)
 {
