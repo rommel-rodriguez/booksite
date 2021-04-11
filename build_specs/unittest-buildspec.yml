@@ -19,7 +19,7 @@ phases:
   build:
     commands:
       - echo PHP Booksite App Build-Build started on `date`
-      - echo The source's directory is `pwd`
+      - echo The source directory is `pwd`
       - echo TOKEN MESSAGE > created_in_build.txt
   post_build:
     commands:
