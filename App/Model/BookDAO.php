@@ -134,6 +134,7 @@ _SQL_;
 			return null;
 		}
 		//TODO: Pass the Fetched row to the Book::FillNewBook
+		// TODO: Does this really work, because it feels like it SHOULDN'T WORK!
 		$foundBook = Book::loadNewBook($bookDict['book_isbn'], $bookDict['book_title'],
 			$bookDict['book_img'], $bookDict['series'], $bookDict['book_url']);
 		return $foundBook;
