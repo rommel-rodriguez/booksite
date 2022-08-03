@@ -1,0 +1,30 @@
+version: 0.2
+
+# env:
+#   variables:
+#     DATABASE_HOST: "not-used"
+#     DATABASE_USER: "not-used"
+#     DATABASE_PASSWORD: "not-used"
+#     DATABASE_DB_NAME: "not-used"
+
+phases:
+  install:
+    commands:
+        # TODO: Need to move the code somehow to the /var/www/html for the 
+        # dynamic tests
+      - echo PHP Booksite App Build-Install started on `date`
+      - echo The starting directory is `pwd`
+      - a2enmod rewrite
+      - service apache2 restart
+  build:
+    commands:
+      - echo PHP Booksite App Build-Build started on `date`
+      - echo The source directory is `pwd`
+      - echo TOKEN MESSAGE > created_in_build.txt
+  post_build:
+    commands:
+      - echo PHP Booksite App Build completed on `date`
+
+artifacts:
+  files:
+    - 'created_in_build.txt'

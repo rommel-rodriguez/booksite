@@ -1,0 +1,4 @@
+Options -Multiviews
+## TODO: Do i really have to use rewrite in this folder?
+#RewriteEngine  On
+#RewriteBase /public

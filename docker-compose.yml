@@ -1,0 +1,13 @@
+version: '3.0'
+## TODO: I get a error that states that network booksite_docker_default can NOT
+## be found.
+services:
+    webserver:
+        build: ./webapp 
+        ports:
+            - 4040:80
+        networks:
+            - booksite_net
+networks:
+    booksite_net:
+    

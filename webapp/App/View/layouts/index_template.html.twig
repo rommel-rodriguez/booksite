@@ -1,0 +1,34 @@
+{% extends "main_template.html.twig" %}
+
+{% block main_content %}
+<div class="row">
+    <p>TESTING TWIG TEMPLATES</p>
+    {% for book in bookList  %}
+      <div class="container-fluid">
+        <section class="row book-item">
+          <header class="col-md-12 text-center book-title"> <h3>{{ attribute(book,getTitle)}}</h3></header>
+          {% if book.getSeries() %}
+            <section class="book-series text-center"><h4>Series: {{ attribute(book,getSeries)}}</h4></section>
+          {% endif %}
+    
+          <a href={{ book.getUrl() }}  class="link-image float-left" target="_blank">
+            <img src={{ book.getImage() }}  style="max-height: 400px;" alt="Image of book" title="buy in Amazon" class="book-image">
+          </a>
+          <p class="book-review">{{ book.getReview() }}</p>
+          <section class="categories col-md-12">
+            {% for category in book.getCategories() %}
+		            {% set catParts = category |split(' ')  %}
+	              <a href="index_controller.php?title={{ category|url_encode }}" class="btn btn-success">
+		              {% for part in catParts %}
+		                {{ part| capitalize}}
+		              {% endfor %}
+	              </a>
+	             
+            {% endfor %}
+          </section>  
+        </section>
+      </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

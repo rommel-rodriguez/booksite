@@ -1,0 +1,17 @@
+{
+    "myKey":{
+        "image": "some image",
+        "videoUrl":"https://www.youtube.com/embed/95JmoNY1AVg", 
+        "description" : "this should be a long description in just one json line, try to find a better formatting option later ",
+        "categories": [ "fantasy"]
+
+    },
+
+    "otherKey":{
+        "image": "some image",
+    	"videoUrl": "https://www.youtube.com/embed/1R-QFQGWYuc",
+        "description" : "this should be a long description in just one json line, try to find a better formatting option later ",
+        "categories": [ "dark fantasy", "fantasy"]
+    }
+
+}

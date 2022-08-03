@@ -1,0 +1,19 @@
+Options -Indexes
+# Options -Multiviews
+##### PERSISTENT CONTENT ####
+DirectoryIndex public/index.php index.cgi index.html index.phtml
+Options +Includes
+# AddHandler application/x-httpd-php  .phtml
+
+RewriteEngine On
+#RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+## In case of request parameter and rewrite parameters having
+## the same name, request parameter wins
+
+## RewriteRule ^(.*)$ public/index.php/?url=$1 [L,QSA]
+# RewriteRule ^(.*)$ public/index.php/?uri=$1 [L,QSA]
+#RewriteRule ^(.*)$ public/index.php/$1 [L,QSA]
+RewriteRule ^(.*)$ public/index.php/$1 [L,QSA]

@@ -1,0 +1,19 @@
+   - Create a .gitignore file to leave out all the credentials, and find a way
+   to make it work in production.
+
+   - Rename composer.json to requirement.json or something?
+
+   - I am trying to do Waterfall, change to agile and get working software. Then
+     start adding new features in subsequent iterations.
+
+   -  Create another user exclusively for webrequest, that has fewer priviliges than
+    the dbadmin(book_admin), that will used exclusively for request originated from
+    the website, this way we limit the amount of information an attacker can leak out
+    from the database in case of a SQLInjection vulnerability.
+
+    - Complete the refactoring inside the App/Controller folder so that all class
+    are of the for <Name>Crontroller.php
+
+    - Add a type 'BookSeries' attribute to the BookClass to let differentitate,
+    between stand-alone books and books that are part of a series, in standalone
+    books this attribute should be set to NULL/None
