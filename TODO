@@ -1,6 +1,0 @@
-   -  Create another user exclusively for webrequest, that has fewer priviliges than
-    the dbadmin(book_admin), that will used exclusively for request originated from
-    the website, this way we limit the amount of information an attacker can leak out
-    from the database in case of a SQLInjection vulnerability.
-    - Complete the refactoring inside the App/Controller folder so that all class
-    are of the for <Name>Crontorller.php
